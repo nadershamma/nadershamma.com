@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "layout/head.html" %}
+    <title>{% block title %} Nader Al-Shamma {% endblock title %}</title>
+</head>
+
+<body>
+<header class="container-fluid bg-dark">
+    <div class="container">
+        {% include "layout/nav.html" %}
+    </div>
+</header>
+<div class="container-fluid">
+    <pre>
+    {{ __tera_context }}
+    </pre>
+    {% block content %} {% endblock content %}
+</div>
+</body>
+</html>
