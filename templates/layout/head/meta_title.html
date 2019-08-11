@@ -1,0 +1,11 @@
+<!-- title -->
+{% if page.title %}
+    {% set head_title = page.title %}
+{% elif section.title %}
+    {% set head_title = section.title ~ " | " ~ config.title %}
+{% else %}
+    {% set head_title = config.title %}
+{% endif %}
+<title>{{ head_title }}</title>
+<meta property='og:title' content='{{ head_title }}'>
+<meta name='twitter:title' content='{{ head_title }}'>

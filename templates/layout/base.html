@@ -1,8 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% include "layout/head.html" %}
-    <title>{% block title %} Nader Al-Shamma {% endblock title %}</title>
+    {% include "layout/head/required.html" %}
+    {% block meta_title %}
+    {% include "layout/head/meta_title.html" %}
+    {% endblock meta_title %}
+    {% block meta_url %}
+    {% include "layout/head/meta_url.html" %}
+    {% endblock %}
+    {% block meta_description %}
+    {% include "layout/head/meta_description.html" %}
+    {% endblock %}
+    {% block meta_image %}
+    {% include "layout/head/meta_image.html" %}
+    {% endblock meta_image %}
+    {% block extra_meta %}
+    {% endblock extra_meta %}
+    {% block styles %}
+    <link rel="stylesheet" href="{{ get_url(path='styles.css') }}"/>
+    {% endblock styles %}
+    {% block scripts %}
+    {% endblock scripts %}
 </head>
 
 <body>
