@@ -1,0 +1,12 @@
+{% if section.extra.og_image %}
+  {% set og_image = section.extra.og_image %}
+{% elif page.extra.og_image %}
+  {% set og_image = page.extra.og_image %}
+{% elif config.extra.og_image %}
+  {% set og_image = config.extra.og_image %}
+{% else %}
+  {% set og_image = "" %}
+{% endif %}
+<!-- image -->
+<meta property="og:image"  content="{{ og_image }}">
+<meta name="twitter:image" content="{{ og_image }}">

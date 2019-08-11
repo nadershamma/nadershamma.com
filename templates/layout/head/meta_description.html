@@ -1,0 +1,11 @@
+<!-- description -->
+{% if section.description %}
+  {% set meta_description = section.description %}
+{elif page.description %}
+  {% set meta_description = page.description %}
+{% else %}
+  {% set meta_description = config.description %}
+{% endif %}
+<meta name='description'         content='{{ meta_description }}'>
+<meta property='og:description'  content='{{ meta_description }}'>
+<meta name='twitter:description' content='{{ meta_description }}'>
