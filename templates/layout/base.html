@@ -17,7 +17,7 @@
     {% block extra_meta %}
     {% endblock extra_meta %}
     {% block styles %}
-    <link rel="stylesheet" href="{{ get_url(path='styles.css') }}"/>
+    <link rel="stylesheet" href="{{ get_url(path='styles/styles.css') }}"/>
     {% endblock styles %}
     {% block scripts %}
     {% endblock scripts %}
@@ -33,5 +33,6 @@
     </pre>
     {% block content %} {% endblock content %}
 </div>
+{% include "layout/footer.html" %}
 </body>
 </html>
