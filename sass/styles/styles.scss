@@ -4,3 +4,13 @@
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/solid";
 @import "../../node_modules/bulma/bulma";
 
+.footer {
+  .social-media-list {
+    margin: 0;
+    list-style: none;
+    li {
+      padding: 5px 10px;
+      display: inline-block;
+    }
+  }
+}
