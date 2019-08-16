@@ -24,15 +24,19 @@
 </head>
 
 <body>
-<header class="navbar is-dark">
+<header class="navbar is-black">
     {% include "layout/nav.html" %}
 </header>
-<div class="container-fluid">
-    <pre>
+<main>
+    {% block hero %}{% endblock hero %}
+    {% block left_aside %}{% endblock left_side %}
+    {% block content %}{% endblock content %}
+    {% block right_aside %}{% endblock right_side %}
+</main>
+
+<pre>
     {{ __tera_context }}
-    </pre>
-    {% block content %} {% endblock content %}
-</div>
+</pre>
 {% include "layout/footer.html" %}
 </body>
 </html>
