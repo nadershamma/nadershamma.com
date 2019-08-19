@@ -4,12 +4,12 @@
     <div class="hero-body">
         <div class="container">
             <div class="columns">
-                <div class="column is-10-mobile is-offset-1-mobile is-4-tablet is-vcentered">
-                    <figure class="image is-square">
+                <div class="column is-10-mobile is-offset-1-mobile is-4-tablet is-offset-1-tablet is-3-desktop is-offset-1-desktop is-vcentered">
+                    <figure class="image is-square has">
                         <img class="is-rounded" src="{{ get_url(path='images/' ~ section.extra.profile) }}">
                     </figure>
                 </div>
-                <div class="column is-10-mobile is-offset-1-mobile is-6-tablet is-offset-1 is-vcentered">
+                <div class="column is-10-mobile is-offset-1-mobile is-6-tablet is-offset-1-tablet is-vcentered">
                     <div class="section">
                         <h2 class="title has-text-centered-mobile">
                             {% if section.extra.hero_title %}
@@ -30,7 +30,6 @@
                         {% endif %}
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
