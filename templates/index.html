@@ -1,1 +1,55 @@
 {% extends "layout/base.html" %}
+{% block hero %}
+<section class="hero is-primary is-bold">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-10-mobile is-offset-1-mobile is-4-tablet is-vcentered">
+                    <figure class="image is-square">
+                        <img class="is-rounded" src="{{ get_url(path='images/' ~ section.extra.profile) }}">
+                    </figure>
+                </div>
+                <div class="column is-10-mobile is-offset-1-mobile is-6-tablet is-offset-1 is-vcentered">
+                    <div class="section">
+                        <h2 class="title has-text-centered-mobile">
+                            {% if section.extra.hero_title %}
+                            {{ section.extra.hero_title}}
+                            {% elif section.title %}
+                            {{ section.title }}
+                            {% elif config.title %}
+                            {{ config.title }}
+                            {% else %}
+                            Hero Title
+                            {% endif %}
+                        </h2>
+                        {% if section.extra.hero_subtitle%}
+                        <h3 class="subtitle has-text-centered-mobile">{{ section.extra.hero_subtitle}}</h3>
+                        {% endif %}
+                        {% if section.extra.hero_info%}
+                        <p class="has-text-centered-mobile">{{ section.extra.hero_info}}</p>
+                        {% endif %}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock hero %}
+{% block content %}
+<section class="section">
+    <section class="container">
+        <section class="columns is-centered">
+            <section class="column is-three-quarters-desktop is-full">
+                <header class="content has-text-centered">
+                    <h1>{{ section.title }}</h1>
+                </header>
+                <article class="content">
+                    {{ section.content | safe}}
+                </article>
+            </section>
+        </section>
+
+    </section>
+</section>
+{% endblock content %}
