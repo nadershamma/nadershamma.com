@@ -1,4 +1,7 @@
 {% extends "layout/base.html" %}
+{% block extra_scripts %}
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+{% endblock extra_scripts %}
 {% block hero %}
 <section class="hero is-primary is-bold">
     <div class="hero-body">
@@ -11,7 +14,7 @@
                 </div>
                 <div class="column is-10-mobile is-offset-1-mobile is-6-tablet is-offset-1-tablet is-vcentered">
                     <div class="section">
-                        <h2 class="title has-text-centered-mobile">
+                        <h2 class="title is-2 has-text-centered-mobile">
                             {% if section.extra.hero_title %}
                             {{ section.extra.hero_title}}
                             {% elif section.title %}
@@ -41,14 +44,63 @@
         <section class="columns is-centered">
             <section class="column is-three-quarters-desktop is-full">
                 <header class="content has-text-centered">
-                    <h1>{{ section.title }}</h1>
+                    <h1 class="title is-1">{{ section.title }}</h1>
                 </header>
                 <article class="content">
                     {{ section.content | safe}}
                 </article>
             </section>
         </section>
+    </section>
+</section>
+<section class="section has-background-light">
+    <section class="container">
+        <section class="columns is-centered">
+            <section class="column is-three-quarters-desktop is-full">
+                <header class="content">
+                    <h2 class="title is-2">Latest blog</h2>
+                </header>
+                <article class="columns">
+                    {% set blogs = get_section(path="blog/_index.md") %}
+                    {% for blog in blogs.pages | slice(end=4) | reverse %}
+                    <div class="column is-3-desktop is-6-tablet is-10-mobile is-offset-1-mobile">
+                        <section class="content">
+                            <h3 class="subtitle is-4"><a href="{{ blog.permalink }}">{{ blog.title | safe }}</a></h3>
+                            <p>{{ blog.date | date(format="%d %B %Y")}}</p>
+                        </section>
+                    </div>
+                    {% endfor %}
+                </article>
+            </section>
+        </section>
+    </section>
+</section>
+<section class="section">
+    <section class="container">
+        <section class="columns is-centered">
+            <section class="column is-three-quarters-desktop is-full">
+                <section id="references" class="content">
+                    &#123;&#123; message &#125;&#125;
+                    {% set references = get_section(path="references/_index.md") %}
+                    {{ references.pages | safe | json_encode()}}
+                    {% for page in references.pages %}
+                    {{ page.title }}
+                    {% endfor %}
 
+                </section>
+            </section>
+        </section>
     </section>
 </section>
 {% endblock content %}
+
+{% block inline_scripts %}
+<script>
+    var app = new Vue({
+        el: '#references',
+        data: {
+            message: 'Hello Vue!'
+        }
+    })
+</script>
+{% endblock inline_scripts %}
