@@ -14,17 +14,7 @@
                 </div>
                 <div class="column is-10-mobile is-offset-1-mobile is-6-tablet is-offset-1-tablet is-vcentered">
                     <div class="section">
-                        <h2 class="title is-2 has-text-centered-mobile">
-                            {% if section.extra.hero_title %}
-                            {{ section.extra.hero_title}}
-                            {% elif section.title %}
-                            {{ section.title }}
-                            {% elif config.title %}
-                            {{ config.title }}
-                            {% else %}
-                            Hero Title
-                            {% endif %}
-                        </h2>
+                        <h1 class="title is-1">{{ section.title }}</h1>
                         {% if section.extra.hero_subtitle%}
                         <h3 class="subtitle has-text-centered-mobile">{{ section.extra.hero_subtitle}}</h3>
                         {% endif %}
@@ -44,7 +34,17 @@
         <section class="columns is-centered">
             <section class="column is-three-quarters-desktop is-full">
                 <header class="content has-text-centered">
-                    <h1 class="title is-1">{{ section.title }}</h1>
+                    <h2 class="title is-2 has-text-centered-mobile">
+                        {% if section.extra.hero_title %}
+                        {{ section.extra.hero_title}}
+                        {% elif section.title %}
+                        {{ section.title }}
+                        {% elif config.title %}
+                        {{ config.title }}
+                        {% else %}
+                        Hero Title
+                        {% endif %}
+                    </h2>
                 </header>
                 <article class="content">
                     {{ section.content | safe}}
@@ -78,15 +78,25 @@
 <section class="section">
     <section class="container">
         <section class="columns is-centered">
-            <section class="column is-three-quarters-desktop is-full">
-                <section id="references" class="content">
-                    &#123;&#123; message &#125;&#125;
+            <section class="column is-three-quarters-desktop">
+                <section id="references" class="content level">
                     {% set references = get_section(path="references/_index.md") %}
-                    {{ references.pages | safe | json_encode()}}
-                    {% for page in references.pages %}
-                    {{ page.title }}
-                    {% endfor %}
-
+                    {% set reference = references.pages | first %}
+                    <div class="references__quote level-item">
+                        <blockquote cite="{%if reference.extra.linkedin %} {{ reference.extra.linkedin }} {% endif %}">
+                            {{ reference.content | safe }}
+                            <footer class="has-text-right">
+                                —{{ reference.title }} <cite>{{ reference.extra.company }}</cite>
+                            </footer>
+                        </blockquote>
+                    </div>
+                </section>
+                <section class="level">
+                    <div class="level-item content">
+                        <div class="level-item">
+                            <p><a href="{{ references.permalink }}">View references</a></p>
+                        </div>
+                    </div>
                 </section>
             </section>
         </section>
@@ -94,13 +104,3 @@
 </section>
 {% endblock content %}
 
-{% block inline_scripts %}
-<script>
-    var app = new Vue({
-        el: '#references',
-        data: {
-            message: 'Hello Vue!'
-        }
-    })
-</script>
-{% endblock inline_scripts %}

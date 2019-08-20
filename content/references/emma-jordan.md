@@ -1,9 +1,8 @@
 +++
 title = "Emma Jordan"
 date = 2018-07-30
-description = "He is truly passionate about his work. He is thorough and communicates clearly."
+description = "By the end of the session I had a much better understanding of how to begin to improve my website..."
 [extra]
-linkedin = "By the end of the session I had a much better understanding of how to begin to improve my website..."
 company = "Summerwood Community Garden"
 url = "http://www.summerwood.org.uk/"
 +++

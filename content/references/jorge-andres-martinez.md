@@ -1,7 +1,7 @@
 +++
 title = "Jorge Andrés Martínez"
 date = 2018-06-07
-description = "He takes the time to really understand other people's business and the needs of their customers and sector."
+description = "He takes the time to really understand other people's business and the needs of their customers and sector. He always communicates his progress throughout any given project and makes it easy to understand,"
 [extra]
 linkedin = "https://www.linkedin.com/in/jorgeandresmartinez/"
 company = "Kaiyu Services"
