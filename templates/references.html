@@ -1,0 +1,46 @@
+{% extends "layout/base.html" %}
+{% block hero %}
+<section class="hero is-warning is-bold">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title h1">
+                {{ section.title }}
+            </h1>
+        </div>
+    </div>
+</section>
+{% endblock %}
+{% block content %}
+<section class="section section__references">
+    <section class="container">
+        {% for reference in section.pages %}
+        <section class="content">
+            <div class="references__quote">
+                <article class="box">
+                    <blockquote cite="{%if reference.extra.linkedin %} {{ reference.extra.linkedin }} {% endif %}">
+                        {{ reference.content | safe }}
+                        <footer class="columns">
+                            <div class="column content">
+                                —{{ reference.title }} <cite>{{ reference.extra.company }}</cite>
+                            </div>
+                            <div class="column content has-text-right">
+                                {%if reference.extra.linkedin %}
+                                <a href="{{reference.extra.linkedin }}" target="_blank">
+                                    <i class="fab fa-linkedin fa-2x"></i>
+                                </a>
+                                {% endif %}
+                                {%if reference.extra.url %}
+                                <a href="{{reference.extra.url }}" target="_blank">
+                                    <i class="fas fa-globe fa-2x"></i>
+                                </a>
+                                {% endif %}
+                            </div>
+                        </footer>
+                    </blockquote>
+                </article>
+            </div>
+        </section>
+        {% endfor %}
+    </section>
+</section>
+{% endblock content %}

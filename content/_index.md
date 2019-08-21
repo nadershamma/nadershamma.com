@@ -4,7 +4,7 @@ title = "Nader Al-Shamma"
 profile = "profile/profile.jpg"
 hero_title = "Hello World!"
 hero_subtitle = "Welcome to my little corner of the World Wide Web."
-hero_info = "Here you will find my thoughts and musing on the building software products, business practices and entrepreneurship."
+hero_info = "Here you will find my thoughts and musing on building software products, business practices and entrepreneurship."
 +++
 
 I'm software engineer, entrepreneur, published academic and conference speaker. I'm passionate about building good 

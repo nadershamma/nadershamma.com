@@ -7,14 +7,14 @@
     <div class="hero-body">
         <div class="container">
             <div class="columns">
-                <div class="column is-10-mobile is-offset-1-mobile is-4-tablet is-offset-1-tablet is-3-desktop is-offset-1-desktop is-vcentered">
+                <div class="column is-8-mobile is-offset-2-mobile is-4-tablet is-vcentered">
                     <figure class="image is-square has">
                         <img class="is-rounded" src="{{ get_url(path='images/' ~ section.extra.profile) }}">
                     </figure>
                 </div>
-                <div class="column is-10-mobile is-offset-1-mobile is-6-tablet is-offset-1-tablet is-vcentered">
+                <div class="column is-10-mobile is-offset-1-mobile is-7-tablet is-offset-1-tablet is-vcentered">
                     <div class="section">
-                        <h1 class="title is-1">{{ section.title }}</h1>
+                        <h1 class="title is-1 has-text-centered-mobile">{{ section.title }}</h1>
                         {% if section.extra.hero_subtitle%}
                         <h3 class="subtitle has-text-centered-mobile">{{ section.extra.hero_subtitle}}</h3>
                         {% endif %}
@@ -32,7 +32,7 @@
 <section class="section">
     <section class="container">
         <section class="columns is-centered">
-            <section class="column is-three-quarters-desktop is-full">
+            <section class="column is-full">
                 <header class="content has-text-centered">
                     <h2 class="title is-2 has-text-centered-mobile">
                         {% if section.extra.hero_title %}
@@ -56,7 +56,7 @@
 <section class="section has-background-light">
     <section class="container">
         <section class="columns is-centered">
-            <section class="column is-three-quarters-desktop is-full">
+            <section class="column is-full">
                 <header class="content">
                     <h2 class="title is-2">Latest blog</h2>
                 </header>
@@ -78,7 +78,7 @@
 <section class="section">
     <section class="container">
         <section class="columns is-centered">
-            <section class="column is-three-quarters-desktop">
+            <section class="column">
                 <section id="references" class="content level">
                     {% set references = get_section(path="references/_index.md") %}
                     {% set reference = references.pages | first %}

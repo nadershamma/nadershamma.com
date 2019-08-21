@@ -1,7 +1,7 @@
 <!-- description -->
 {% if section.description %}
   {% set meta_description = section.description %}
-{elif page.description %}
+{% elif page.description %}
   {% set meta_description = page.description %}
 {% else %}
   {% set meta_description = config.description %}

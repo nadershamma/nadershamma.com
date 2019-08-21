@@ -1,0 +1,25 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  main {
+    width: 100%;
+    flex-grow: 1;
+  }
+
+  .footer {
+    width: 100%;
+    align-self: flex-end;
+
+    .social-media-list {
+      margin: 0;
+      list-style: none;
+
+      li {
+        padding: 5px 10px;
+        display: inline-block;
+      }
+    }
+  }
+}
