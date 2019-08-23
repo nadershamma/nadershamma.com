@@ -7,7 +7,7 @@ hero_subtitle = "Welcome to my little corner of the World Wide Web."
 hero_info = "Here you will find my thoughts and musing on building software products, business practices and entrepreneurship."
 +++
 
-I'm software engineer, entrepreneur, published academic and conference speaker. I'm passionate about building good 
+I'm Nader; a software engineer, entrepreneur, published academic and conference speaker. I'm passionate about building good 
 software and products that help to improve people's lives. I firmly believe technology should be built for the benefit 
 of society and the people who use it and I take a keen interest in the relationship we have with technology.
  

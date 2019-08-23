@@ -2,5 +2,22 @@
 {% block title %} {{ page.title }} | Nader Al-Shamma {% endblock %}
 
 {% block content %}
-{{ page.content | safe }}
+<article>
+    <header class="hero is-warning is-bold">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title h1">
+                    {{ page.title }}
+                </h1>
+            </div>
+        </div>
+    </header>
+    <article class="section">
+        <div class="container">
+            <div class="content">
+                {{ page.content | safe }}
+            </div>
+        </div>
+    </article>
+</article>
 {% endblock content %}

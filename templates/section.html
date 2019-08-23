@@ -1,6 +1,28 @@
 {% extends "layout/base.html" %}
 {% block title %} {{ section.title }} | Nader Al-Shamma {% endblock %}
 
+{% block hero %}
+<section class="hero is-warning is-bold">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title h1">
+                {{ section.title }}
+            </h1>
+        </div>
+    </div>
+</section>
+{% endblock %}
 {% block content %}
-{{ section.content | safe}}
+<section class="section section__pages">
+    <section class="container">
+        {% for page in section.pages %}
+        <section class="content">
+            <article class="box">
+                {{ page.title }}
+                <a href="{{ page.permalink }}">Page</a>
+            </article>
+        </section>
+        {% endfor %}
+    </section>
+</section>
 {% endblock content %}

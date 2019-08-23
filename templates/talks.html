@@ -1,0 +1,33 @@
+{% extends "layout/base.html" %}
+{% block hero %}
+<header class="hero is-info is-bold">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title is-1">
+                {{ section.title }}
+            </h1>
+        </div>
+    </div>
+</header>
+{% endblock %}
+{% block content %}
+<section class="section">
+    <section class="container">
+        {% for talk in section.pages %}
+        <div class="box">
+            <article class="content">
+                <h2 class="title is-4"><a href="{{ talk.permalink }}"> {{ talk.title }} </a></h2>
+            </article>
+            <footer class="columns">
+                <div class="column is-10-mobile is-8-tablet">
+                    <p>{{ talk.extra.event }}</p>
+                </div>
+                <div class="column is-10-mobile is-4-tablet has-text-right">
+                    <p>{{ talk.date | date(format="%d %B %Y")}}</p>
+                </div>
+            </footer>
+        </div>
+        {% endfor %}
+    </section>
+</section>
+{% endblock content %}
